@@ -127,6 +127,10 @@ Here are some notes and tips:
 
 * The last line of the input is "END". You can use the **strcmp()** function to determine when the end has been reached by comparing the string read with **"END\n"** (note the newline!).
 
+The number of strings that **nurseryrhyme()** will be called with will be determined at runtime, not to exceed **20**. You will write a **main()** procedure that will read these strings from the input, put them into an array of strings (up to 20 strings in the array, each string no longer than **15** characters _including NULL_), and pass this array to **nurseryrhyme()**. Use the code template provided in **ex3.c.**
+
+Your implementation of **nurseryrhyme()** _must be recursive_. A non-recursive implementation of the function will receive **zero credit**. Moreover, since this is an exercise in generating text, any mismatches, including white space errors, will be penalized. Name the file with your C code **ex3.c**. Test it using your own inputs, and also the sample inputs provided.
+
 ---------------------------------------------------------------------------------------------------
 
 ## Exercise 4: Binary Pattern Generation
