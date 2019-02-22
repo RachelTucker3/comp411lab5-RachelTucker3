@@ -150,9 +150,11 @@ This exercise is best done using recursion. In particular, to generate all binar
 
 Assume **N** will not be more than 10. Name your file **ex4.c**, and test using your own inputs as well as the input/output sample files.
 
+-------------------------------------------------------------------------
+
 ## Exercise 5: More Patterns
 
-Modify your program from Exercise 3 so that it only generates patterns that **do not** contain two (or more) consecutive '1's. Thus, for **N=3**, the output will now be:
+Modify your program from Exercise 4 so that it only generates patterns that **do not** contain two (or more) consecutive '1's. Thus, for **N=3**, the output will now be:
 
 <pre>
 000
