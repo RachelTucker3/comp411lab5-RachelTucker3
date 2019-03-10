@@ -4,6 +4,7 @@
 int A[10];
 int N;
 int index;
+int recursive(int A[10], int N, int index);
 
 
 int main() {
@@ -11,31 +12,28 @@ int main() {
 	scanf("%d", &N);
 	for(int i = 0; i < N; i++) {
 
-		a[i] = 0;
+		A[i] = 0;
 
 	}
 	index = 0;
 
-	recursive(A[], N, index);
+	recursive(A, N, index);
 
 }
 
-int recursive(int A[], int N, int index) {
+int recursive(int A[10], int N, int index) {
 
 	if(N == 0) {
 
 		A[N] = 1;
-		printf(
 
 	} else {
 
 		A[N] = 0;
-		recursive(A[], N-1, index);
+		recursive(A[N], N-1, index);
 		index = 1;
-		recursive(A[], N-1, index);
+		recursive(A[N], N-1, index);
 	}
-
-	return 0;
 
 
 }
