@@ -11,15 +11,16 @@ void nurseryrhyme(int current) {
 
 		printf("There was an old lady who swallowed a ");
 		printf("%s;", animals[current]);
+		printf("\n");
 		nurseryrhyme(current + 1);
 
 	} else {
 
 		printf("%*s", current, "");
-		printf("She swallowed the %s to catch the %s", animals[current-1], animals[current]);
-
+		printf("She swallowed the %s to catch the %s;", animals[current - 1], animals[current]);
+		printf("\n");
 		if(current < number-1) {
-		nurseryrhyme(current+1);
+			nurseryrhyme(current + 1);
 		}
 
 	}
