@@ -26,6 +26,7 @@ int main() {
                                                 // read the next animal name
     if (strcmp(animals[i], "END\n") == 0)       // if it is "END\n", we are done reading
       break;
+
                                                 // determine the length of the string read
                                                 // strip the newline at the end
                                                 // read the lyric corresponding to the animal

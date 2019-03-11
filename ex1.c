@@ -54,10 +54,6 @@ int main() {
 	endX = x;
 	endY = y;
 
-      } if(tempchar == (char)32) {
-
-	correctPath[y][x] == true;
-
       }else {
 
         wasHere[y][x] = false;
@@ -72,21 +68,37 @@ int main() {
   for(y=0; y < height; y++) {
     for(x=0; x < width; x++) {
 
- 	if(correctPath[y][x] == true){
+ 	if(maze[y][x] == (char) 32) {
 
-		printf(".");
+		if(correctPath[y][x] == true){
 
-	} else if(x == startX && y == startY) {
+			printf(".");
+
+		} else {
+
+			printf(" ");
+
+		}
+
+
+        }else if(x == startX && y == startY) {
 
                 printf("S");
 
-        } else if(x == endX && y == endY) {
+        }else if(x == endX && y == endY) {
 
                 printf("F");
 
         } else {
-		printf("*");
+		if (maze[y][x] == (char)42) {
 
+			printf("*");
+
+		} else {
+
+			printf(".");
+
+		}
 	}
     }
 
@@ -106,7 +118,7 @@ int recursiveSolve(int x, int y) {
   */
 
     if (x == endX && y == endY) return true; // If you reached the end
-    if (maze[y][x] == (char)42 || wasHere[y][x]) return false;  
+    if (maze[y][x] == (char)42 || wasHere[y][x]) return false;
     // If you are on a wall or already were here
     wasHere[y][x] = true;
     if (x != 0) // Checks if not on left edge
