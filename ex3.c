@@ -16,16 +16,16 @@ void nurseryrhyme(int current) {
 	} else {
 
 		printf("%*s", current, "");
-		printf("She swallowed a %s", animals[current - 1]);
-		printf(" to catch a %s;", animals[current]);
+		printf("She swallowed the %s to catch the %s", animals[current-1], animals[current]);
 
-		if(current < number-1)
+		if(current < number-1) {
 		nurseryrhyme(current+1);
+		}
+
 	}
 
 	printf("%*s", current, "");
-	printf("I don't know why she swallowed a %s", animals[current]);
-	printf(" - %s", lyrics[current]);
+	printf("I don't know why she swallowed a %s - %s", animals[current], lyrics[current]);
 }
 
 
@@ -39,7 +39,7 @@ int main() {
                                                 // read the next animal name
 	if (strcmp(animals[i], "END\n") == 0)       // if it is "END\n", we are done reading
 	break;
-	animals[i][q] = '\0';
+	animals[i][q-1] = '\0';
 	fgets(lyrics[i], 60, stdin);
                                                 // determine the length of the string read
                                                 // strip the newline at the end
