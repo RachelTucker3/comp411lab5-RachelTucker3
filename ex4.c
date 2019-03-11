@@ -1,38 +1,34 @@
 #include <stdio.h>
+#include <string.h>
 
-
-int A[10];
+char A[1] = {'\0'};
 int N;
-int index;
-int recursive(int A[10], int N, int index);
-
+char recursive(char a[], int n);
 
 int main() {
 
 	scanf("%d", &N);
-	for(int i = 0; i < N; i++) {
 
-		A[i] = 0;
-
-	}
-	index = 0;
-
-	recursive(A, N, index);
+	recursive(A, N);
 
 }
 
-int recursive(int A[10], int N, int index) {
+char recursive(char a[], int n) {
 
-	if(N == 0) {
+	if(n == 0) {
 
-		A[N] = 1;
+		printf("%s\n", a);
 
 	} else {
 
-		A[N] = 0;
-		recursive(A[N], N-1, index);
-		index = 1;
-		recursive(A[N], N-1, index);
+		int cur = strlen(a);
+		a[cur] = '0';
+		a[cur + 1] = '\0';
+		recursive(a, n-1);
+		a[cur] = '1';
+		a[cur + 1] = '\0';
+		recursive(a, n-1);
+
 	}
 
 
